@@ -1,2 +1,2 @@
 # AndroidApps
-This contains my Android learning app.
+This contains my Android apps created for Learning Purpose.
