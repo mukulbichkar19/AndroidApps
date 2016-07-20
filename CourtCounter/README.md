@@ -17,10 +17,12 @@ This sample uses the Gradle build system. To build this project, use the
 "gradlew build" command or use "Import Project" in Android Studio.
 
 <!--![App Icon](app/src/main/res/AppIcon.png?raw=true "App Icon")-->
-<div id="App Icon">
-<img src="app/src/main/res/AppIcon.png" align="left" height="400" width="200" ></br>
-</div>
-<p>App Icon</p>
+
+<img src="app/src/main/res/AppIcon.png" align="left" height="400" width="200" >
+![]
+<h3>App Icon</h3>
+
+
 
 
 
