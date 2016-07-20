@@ -20,6 +20,7 @@ This sample uses the Gradle build system. To build this project, use the
 
 <img src="app/src/main/res/AppIcon.png" align="left" height="400" width="200" >
 <Enter>
+</h3>App Icon</h3>
 
 
 
