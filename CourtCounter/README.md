@@ -20,7 +20,7 @@ This sample uses the Gradle build system. To build this project, use the
 
 <img src="app/src/main/res/AppIcon.png" align="left" height="400" width="300" >
 <img src="app/src/main/res/App.png" align="center" height="400" width="300" >
-<img src="app/src/main/res/AppResetState.png" align="right" height="400" width="235" >
+<img src="app/src/main/res/AppResetState.png" align="right" height="400" width="245" >
 
 
 
