@@ -16,7 +16,7 @@ Getting Started
 This sample uses the Gradle build system. To build this project, use the
 "gradlew build" command or use "Import Project" in Android Studio.
 
-![App Icon](app/src/main/res/AppIcon.png?raw=true "App Icon"{width=40px height=400px})
+![App Icon](app/src/main/res/AppIcon.png?raw=true "App Icon"{width=40px height=40px})
 
 
 
