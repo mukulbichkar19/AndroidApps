@@ -19,8 +19,7 @@ This sample uses the Gradle build system. To build this project, use the
 <!--![App Icon](app/src/main/res/AppIcon.png?raw=true "App Icon")-->
 
 <img src="app/src/main/res/AppIcon.png" align="left" height="400" width="200" >
-![]
-<h3>App Icon</h3>
+<Enter>
 
 
 
