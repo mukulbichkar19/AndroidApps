@@ -26,6 +26,10 @@ This sample uses the Gradle build system. To build this project, use the
 
 
 
+<h3>App Main Screen</h3>
+
+
+
 
 
 
