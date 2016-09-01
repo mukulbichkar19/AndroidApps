@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp"
+    android:divider="@null"
+    android:dividerHeight="0dp">
+
+    <TextView
+        android:layout_height="36dp"
+        android:layout_width="36dp"
+        android:id="@+id/movie_rating"
+        android:layout_gravity="center_vertical"
+
+        android:gravity="center"
+        android:textSize="16sp"
+        tools:text="8.9"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            tools:text="Demo name"/>
+
+        <TextView
+            android:id="@+id/movie_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            tools:text="So the movie is all about romance, feelings and action." />
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/movie_release_date"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:textSize="12sp"
+        android:paddingTop="24dp"
+        android:gravity="center_vertical"
+        tools:text="Sep 3,2016"/>
+
+
+
+
+</LinearLayout>
