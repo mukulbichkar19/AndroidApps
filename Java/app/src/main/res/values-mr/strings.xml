@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Java</string>
+    <string name="thank_you">धन्यवाद !!</string>
+    <string name="toppings">साहित्य</string>
+    <string name="chocolate"> चॉकलेट</string>
+    <string name="coffee_price"> $ 10</string>
+    <string name="initialquantity">2</string>
+    <string name="order"> ऑर्डर</string>
+    <string name="order_summary">मागणी सारांश</string>
+    <string name="quantity">कप</string>
+    <string name="whipped_cream">मलई</string>
+</resources>
