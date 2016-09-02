@@ -83,12 +83,12 @@ public class QueryUtils {
             String movie_genre = movieObject.getString("Genre");
             String release_date = movieObject.getString("ReleaseDate");
             String trailer_url = movieObject.getString("TrailerLink");
-            //String movie_poster = movieObject.getString("PosterPath");
+            String movie_poster = movieObject.getString("PosterPath");
             if(trailer_url.equals("")){
                 trailer_url = "no trailer available";
             }
 
-            movies.add(new MovieRecord(rating,movie_name,movie_genre,release_date,trailer_url));
+            movies.add(new MovieRecord(rating,movie_name,movie_genre,release_date,trailer_url,movie_poster));
 
 
         }

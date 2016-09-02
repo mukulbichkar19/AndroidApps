@@ -22,6 +22,16 @@ public class MovieRecord {
 
     }
 
+    public MovieRecord(double mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl,String mPosterurl){
+
+        this.mRating = mRating;
+        this.mMovieTitle = mMovieTitle;
+        this.mMovieGenre = mMovieGenre;
+        this.mReleaseDate = mReleaseDate;
+        this.mTrailerUrl = mTrailerUrl;
+        this.mPosterurl = mPosterurl;
+    }
+
     public double getmRating(){
         return this.mRating;
     }

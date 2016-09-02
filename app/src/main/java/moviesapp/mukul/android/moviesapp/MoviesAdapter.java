@@ -48,17 +48,17 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
 
 
         // Populate the movie rating
-        TextView movie_rating_view = (TextView) listItemView.findViewById(R.id.movie_rating);
-        String formatted_movie_rating = formattedRating(currentMovie.getmRating());
-        movie_rating_view.setText(formatted_movie_rating);
+        //TextView movie_rating_view = (TextView) listItemView.findViewById(R.id.movie_rating);
+        //String formatted_movie_rating = formattedRating(currentMovie.getmRating());
+        //movie_rating_view.setText(formatted_movie_rating);
 
         // Set the proper background color on the magnitude circle.
         // Fetch the background from the TextView, which is a GradientDrawable.
-        GradientDrawable ratingCircle = (GradientDrawable) movie_rating_view.getBackground();
+        //GradientDrawable ratingCircle = (GradientDrawable) movie_rating_view.getBackground();
 
         int ratingColor = getratingColor(currentMovie.getmRating());
 
-        ratingCircle.setColor(ratingColor);
+        //ratingCircle.setColor(ratingColor);
 
         // Populate the Movie title
         TextView movie_title_view = (TextView) listItemView.findViewById(R.id.movie_title);
@@ -88,9 +88,9 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
         }
 */
 
-        /*ImageView movie_poster = (ImageView)listItemView.findViewById(R.id.movie_image);
-        System.out.println(currentMovie.getmPosterurl());
-        Picasso.with(getContext()).load(currentMovie.getmPosterurl()).into(movie_poster);*/
+        ImageView movie_poster = (ImageView)listItemView.findViewById(R.id.movie_poster);
+        System.out.println(movie_poster);
+        Picasso.with(this.getContext()).load(currentMovie.getmPosterurl()).into(movie_poster);
 
         return listItemView;
 
