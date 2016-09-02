@@ -7,15 +7,15 @@ public class MovieRecord {
 
     private double mRating;
     private String mMovieTitle;
-    private String mMovieDescription;
+    private String mMovieGenre;
     private String mReleaseDate;
     private String mTrailerUrl;
 
-    public MovieRecord(double mRating, String mMovieTitle,String mMovieDescription, String mReleaseDate, String mTrailerUrl){
+    public MovieRecord(double mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl){
 
         this.mRating = mRating;
         this.mMovieTitle = mMovieTitle;
-        this.mMovieDescription = mMovieDescription;
+        this.mMovieGenre = mMovieGenre;
         this.mReleaseDate = mReleaseDate;
         this.mTrailerUrl = mTrailerUrl;
     }
@@ -28,8 +28,8 @@ public class MovieRecord {
         return this.mMovieTitle;
     }
 
-    public String getmMovieDescription(){
-        return this.mMovieDescription;
+    public String getmMovieGenre(){
+        return this.mMovieGenre;
     }
 
     public String getmReleaseDate(){

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+
+
+
+
+    <!-- Color for an movie with magnitude 0 and 2 -->
+    <color name="magnitude1">#FF7D50</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 2 and 3 -->
+    <color name="magnitude2">#7B1FA2</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 3 and 4 -->
+    <color name="magnitude3">#689F38</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 4 and 5 -->
+    <color name="magnitude4">#F5A623</color>
 </resources>

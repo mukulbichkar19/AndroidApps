@@ -16,7 +16,8 @@
         android:layout_width="36dp"
         android:id="@+id/movie_rating"
         android:layout_gravity="center_vertical"
-
+        android:background="@drawable/rating_circle"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:textSize="16sp"
         tools:text="8.9"/>
@@ -27,7 +28,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_weight="1"
+        android:layout_weight="0.78"
         android:orientation="vertical">
 
         <TextView
@@ -38,21 +39,23 @@
             android:maxLines="1"
             android:textAllCaps="true"
             android:textSize="14sp"
+           android:textColor="#000000"
             tools:text="Demo name"/>
 
         <TextView
-            android:id="@+id/movie_description"
+            android:id="@+id/movie_genre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:textSize="12sp"
-            tools:text="So the movie is all about romance, feelings and action." />
+            android:textColor="#546E7A"
+            tools:text="romcom ..." />
 
         </LinearLayout>
 
     <TextView
         android:id="@+id/movie_release_date"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_width="wrap_content"
         android:layout_gravity="end"
         android:textSize="12sp"
