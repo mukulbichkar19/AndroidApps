@@ -15,4 +15,30 @@
 
     <!-- Magnitude circle color for an earthquake with magnitude between 4 and 5 -->
     <color name="magnitude4">#F5A623</color>
+
+
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_released_this_week_value</string>
+
+    <!-- Label for order-by released this week option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_released_this_week_label">Released This Week</string>
+    <string name="settings_order_by_released_this_week_value" translatable="false">releasedthisweek</string>
+
+    <!-- Label for order-by upcoming option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_upcoming_label">Upcoming</string>
+    <string name="settings_order_by_upcoming_value" translatable="false">upcoming</string>
+
+    <!-- Label for order-by next change option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_next_change_label">Next Change</string>
+    <string name="settings_order_by_next_change_value" translatable="false">nextchange</string>
+
+    <string name="settings_title">Choose movie by</string>
+
+
+    <string name="settings_menu_item">Settings</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+
+
+
 </resources>

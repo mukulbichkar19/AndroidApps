@@ -5,14 +5,18 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.graphics.Movie;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,10 +40,29 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
     private static final int MOVIE_LOADER_ID = 1;
 
     private static final String REQUEST_MOVIES_DATA = "https://api.cinemalytics.com/v1/movie/releasedthisweek?auth_token=FCCB2729939E4173D5F2330BF76B62C6";
-
+    // releasedthisweek?auth_token=FCCB2729939E4173D5F2330BF76B62C6
+    private static final String Base_URL = "https://api.cinemalytics.com/v1/movie/";
     private MoviesAdapter movieadapter;
 
     private TextView mEmptyTextView;
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_settings){
+            Intent settingsIntent = new Intent(this,SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,7 +145,23 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
 
     @Override
     public Loader<List<MovieRecord>> onCreateLoader(int id, Bundle args) {
-        return new MovieLoader(this, REQUEST_MOVIES_DATA);
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String user_choice = sharedPrefs.getString(getString(R.string.settings_order_by_key),getString(R.string.settings_order_by_default));
+        final String temp = Base_URL + user_choice;
+        final String AUTH = "auth_token";
+        final String APP_ID = "FCCB2729939E4173D5F2330BF76B62C6";
+
+        Uri buildUri = Uri.parse(temp).buildUpon()
+                .appendQueryParameter(AUTH,APP_ID).build();
+
+
+        Log.e("Built Uri",buildUri.toString());
+
+
+
+
+        return new MovieLoader(this, buildUri.toString());
 
     }
 
