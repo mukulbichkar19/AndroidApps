@@ -2,9 +2,12 @@ package moviesapp.mukul.android.moviesapp;
 
 import android.app.DownloadManager;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.graphics.Movie;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +17,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,9 +35,11 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
 
     private static final int MOVIE_LOADER_ID = 1;
 
-    private static final String REQUEST_MOVIES_DATA = "https://api.cinemalytics.com/v1/movie/upcoming?auth_token=FCCB2729939E4173D5F2330BF76B62C6";
+    private static final String REQUEST_MOVIES_DATA = "https://api.cinemalytics.com/v1/movie/releasedthisweek?auth_token=FCCB2729939E4173D5F2330BF76B62C6";
 
     private MoviesAdapter movieadapter;
+
+    private TextView mEmptyTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +56,7 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
                 MovieRecord currentMovie = movieadapter.getItem(position);
                 //System.out.println(currentMovie.getmTrailerUrl());
                 if(currentMovie.getmTrailerUrl() == "no trailer available"){
-                    Toast toast = Toast.makeText(getApplicationContext(),"Sorry no trailer available for "+currentMovie.getmMovieTitle() + " stay tuned for updates",Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Sorry no trailer available for "+currentMovie.getmMovieTitle() + " stay tuned for updates",Toast.LENGTH_SHORT);
                     toast.show();
                     return;
 
@@ -83,10 +90,26 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
       /*  MoviesAsyncTask task = new MoviesAsyncTask();
         task.execute();*/
 
-        LoaderManager loadermanager = getLoaderManager();
-        loadermanager.initLoader(MOVIE_LOADER_ID, null, this);
 
 
+
+
+
+        ConnectivityManager cm =
+                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if(activeNetwork != null && activeNetwork.isConnected()){
+            LoaderManager loadermanager = getLoaderManager();
+            loadermanager.initLoader(MOVIE_LOADER_ID, null, this);
+        }
+        else{
+            mEmptyTextView = (TextView)findViewById(R.id.empty_view);
+            mEmptyTextView.setText("Offline could not refresh feed");
+        }
+
+        mEmptyTextView = (TextView)findViewById(R.id.empty_view);
+        movies_view.setEmptyView(mEmptyTextView);
 
 
 
@@ -111,6 +134,9 @@ public class MoviesActivity extends AppCompatActivity implements LoaderManager.L
             movieadapter.addAll(data);
 
         }
+        mEmptyTextView.setText("Sorry no movies found right now !!!");
+        ProgressBar spinner = (ProgressBar) findViewById(R.id.loading_spinner);
+        spinner.setVisibility(View.GONE);
     }
 
     @Override

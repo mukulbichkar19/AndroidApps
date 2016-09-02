@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -20,6 +21,8 @@ import java.util.List;
 import java.util.Locale;
 
 import android.graphics.drawable.GradientDrawable;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by mukul on 8/31/2016.
@@ -71,7 +74,7 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
 
         Date dateObject = new Date(currentMovie.getmReleaseDate());
         String formatDate = formatDate(dateObject);
-        movie_release_date_view.setText(formatDate);
+         movie_release_date_view.setText(formatDate);
        /* SimpleDateFormat df_input = new SimpleDateFormat(currentMovie.getmReleaseDate(),java.util.Locale.getDefault());
         SimpleDateFormat df_output = new SimpleDateFormat("dd MMM yyyy",java.util.Locale.getDefault());
         Date parsed = null;
@@ -84,6 +87,10 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
             e.printStackTrace();
         }
 */
+
+        /*ImageView movie_poster = (ImageView)listItemView.findViewById(R.id.movie_image);
+        System.out.println(currentMovie.getmPosterurl());
+        Picasso.with(getContext()).load(currentMovie.getmPosterurl()).into(movie_poster);*/
 
         return listItemView;
 

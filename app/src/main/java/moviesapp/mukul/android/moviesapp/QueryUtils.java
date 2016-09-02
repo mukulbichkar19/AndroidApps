@@ -49,6 +49,11 @@ public class QueryUtils {
             e.printStackTrace();
         }
         //System.out.println(movieslist.get(2).getmMovieTitle());
+        /*try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         return movieslist;
     }
 
@@ -78,6 +83,7 @@ public class QueryUtils {
             String movie_genre = movieObject.getString("Genre");
             String release_date = movieObject.getString("ReleaseDate");
             String trailer_url = movieObject.getString("TrailerLink");
+            //String movie_poster = movieObject.getString("PosterPath");
             if(trailer_url.equals("")){
                 trailer_url = "no trailer available";
             }

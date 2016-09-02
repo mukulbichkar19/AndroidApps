@@ -58,7 +58,7 @@
         android:layout_height="48dp"
         android:layout_width="wrap_content"
         android:layout_gravity="end"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:paddingTop="24dp"
         android:gravity="center_vertical"
         tools:text="Sep 3,2016"/>

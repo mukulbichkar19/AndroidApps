@@ -10,6 +10,7 @@ public class MovieRecord {
     private String mMovieGenre;
     private String mReleaseDate;
     private String mTrailerUrl;
+    private String mPosterurl;
 
     public MovieRecord(double mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl){
 
@@ -18,6 +19,7 @@ public class MovieRecord {
         this.mMovieGenre = mMovieGenre;
         this.mReleaseDate = mReleaseDate;
         this.mTrailerUrl = mTrailerUrl;
+
     }
 
     public double getmRating(){
@@ -39,6 +41,8 @@ public class MovieRecord {
     public String getmTrailerUrl(){
         return this.mTrailerUrl;
     }
+
+    public String getmPosterurl(){return this.mPosterurl;}
 
 
 }
