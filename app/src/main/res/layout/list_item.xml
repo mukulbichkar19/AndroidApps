@@ -65,6 +65,15 @@
             android:textColor="#546E7A"
             tools:text="romcom ..." />
 
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"
+            android:numStars="5"
+            android:stepSize="0.1"
+            android:isIndicator="true"/>
+
 
 
         </LinearLayout>

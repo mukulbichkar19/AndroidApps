@@ -1,15 +1,23 @@
 package moviesapp.mukul.android.moviesapp;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -34,6 +42,7 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
         super(context, 0, movieRecords);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -51,6 +60,16 @@ public class MoviesAdapter extends ArrayAdapter<MovieRecord> {
         //TextView movie_rating_view = (TextView) listItemView.findViewById(R.id.movie_rating);
         //String formatted_movie_rating = formattedRating(currentMovie.getmRating());
         //movie_rating_view.setText(formatted_movie_rating);
+        RatingBar ratingBar = (RatingBar)listItemView.findViewById(R.id.rating);
+        ratingBar.setEnabled(false);
+        ratingBar.setMax(5);
+        ratingBar.setStepSize(0.01f);
+        ratingBar.setRating(currentMovie.getmRating());
+        ratingBar.invalidate();
+        /*LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
+        stars.getDrawable(2).setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);*/
+        Drawable progress = ratingBar.getProgressDrawable();
+        DrawableCompat.setTint(progress, Color.RED);
 
         // Set the proper background color on the magnitude circle.
         // Fetch the background from the TextView, which is a GradientDrawable.

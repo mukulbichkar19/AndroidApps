@@ -78,7 +78,7 @@ public class QueryUtils {
         for(int i=0;i<rootJSON.length();i++)
         {
             JSONObject movieObject = rootJSON.getJSONObject(i);
-            double rating = Double.parseDouble(movieObject.getString("Rating"));
+            float rating = Float.parseFloat(movieObject.getString("Rating"));
             String movie_name = movieObject.getString("Title");
             String movie_genre = movieObject.getString("Genre");
             String release_date = movieObject.getString("ReleaseDate");

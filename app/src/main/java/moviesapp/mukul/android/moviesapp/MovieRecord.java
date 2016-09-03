@@ -5,14 +5,14 @@ package moviesapp.mukul.android.moviesapp;
  */
 public class MovieRecord {
 
-    private double mRating;
+    private float mRating;
     private String mMovieTitle;
     private String mMovieGenre;
     private String mReleaseDate;
     private String mTrailerUrl;
     private String mPosterurl;
 
-    public MovieRecord(double mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl){
+    public MovieRecord(float mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl){
 
         this.mRating = mRating;
         this.mMovieTitle = mMovieTitle;
@@ -22,7 +22,7 @@ public class MovieRecord {
 
     }
 
-    public MovieRecord(double mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl,String mPosterurl){
+    public MovieRecord(float mRating, String mMovieTitle,String mMovieGenre, String mReleaseDate, String mTrailerUrl,String mPosterurl){
 
         this.mRating = mRating;
         this.mMovieTitle = mMovieTitle;
@@ -32,7 +32,7 @@ public class MovieRecord {
         this.mPosterurl = mPosterurl;
     }
 
-    public double getmRating(){
+    public float getmRating(){
         return this.mRating;
     }
 
